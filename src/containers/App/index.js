@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { renderRoutes } from 'react-router-config';
 import { Layout } from 'antd';
 import { MenuComponent } from './menu'
-import { route } from '../../routes'
+import { router } from '../../routes'
 
 const { Header, Content } = Layout;
 
@@ -22,7 +22,7 @@ class App extends Component {
         </Header>
         <Content style={{ background: '#fff', padding: '0 50px' }}>
         <div style={{padding: 24}}>
-          {renderRoutes(route[0].routes)}
+          {renderRoutes(router.routes)}
           </div>
         </Content>
       </Layout>

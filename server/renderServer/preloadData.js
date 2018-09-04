@@ -1,8 +1,8 @@
 import { matchRoutes } from 'react-router-config'
-import { route } from '../../src/routes';
+import { router } from '../../src/routes';
 
 export const PreloadGlobalInit = (store) => {
-  if(route[0].PreloadGlobal){
+  if(router.PreloadGlobal){
     return Promise.all(
       route[0]
       .PreloadGlobal()
@@ -13,7 +13,7 @@ export const PreloadGlobalInit = (store) => {
 }
 
 export const PreloadDataInit = (req, store) => {
-  const branch = matchRoutes(route[0].routes, req.path);
+  const branch = matchRoutes(router.routes, req.path);
     const promises = branch.map(({route, match }) => {
       if (route.PreloadData) {
           return Promise.all(

@@ -52,7 +52,7 @@ module.exports = {
           },
         ],
       },
-      { test: /\.css$/, loader: 'ignore-loader' }
+      { test: /\.scss$/, loader: 'ignore-loader' }
     ]
   },
   plugins: [

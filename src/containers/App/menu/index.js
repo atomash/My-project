@@ -2,7 +2,7 @@ import React from 'react';
 import { Link,} from 'react-router-dom'
 import { Menu } from 'antd';
 import logo from './logo.svg';
-import './index.css';
+import './index.scss';
 
 export const MenuComponent = () => (
         <Menu

@@ -44,7 +44,7 @@ async function ServerRender(req, res){
       try {
       const appString = renderToString(rootElement);
       if (context.url){
-        res.redirect(context.status, context.url)
+        return res.redirect(context.status, context.url)
       }
       if(context.status === 404){
         res.status(404)

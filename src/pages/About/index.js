@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { Button } from 'antd';
-import './components/index.css';
+import './styles/index.scss';
 
 class About extends Component {
   render() {

@@ -26,8 +26,7 @@ const Home = Loadable({
     modules: ['./pages/TestRedirect']
   });
 
-export const route = [
-    {
+export const router = {
     //    PreloadGlobal: ()=> [
     //     fetchUser()
     //    ],
@@ -62,4 +61,3 @@ export const route = [
             }
         ],
     }
-]
