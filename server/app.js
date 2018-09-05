@@ -17,7 +17,7 @@ const app = express();
 const MongoStore = require('connect-mongo')(session);
 
 app.disable('x-powered-by');
-const webpackDevServerHost = 'localhost:3000';
+const webpackDevServerHost = 'localhost:5050';
 
 if (process.env.NODE_ENV === 'development') {
     const __ROOT_DIR__ = process.cwd();

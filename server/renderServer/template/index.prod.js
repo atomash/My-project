@@ -7,7 +7,7 @@ const linkCss = bundles => {
     ...bundles.filter(b => b.file.endsWith('.css')).map(b => b.file)
   ];
   return paths.reduce((string, path) => {
-    string += `<link href="/${path}" rel="stylesheet">`;
+    string += `<link rel="stylesheet" href="/${path}">`;
     return string;
   }, '')
 };
@@ -38,8 +38,8 @@ export default props => `
     ${props.helmet.meta.toString()}
     <meta name="theme-color" content="#000000">
     ${props.helmet.link.toString()}
-    <link rel="stylesheet" href="${assetManifest['main.css']}"/>
     <link rel="stylesheet" href="${assetManifest['vendors.css']}"/>
+    <link rel="stylesheet" href="${assetManifest['main.css']}"/>
     ${linkCss(props.bundles)}
     <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" href="/favicon.ico">

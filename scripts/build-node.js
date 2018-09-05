@@ -38,5 +38,9 @@ compiler.run((err, stats) => {
   });
   console.log(statsString);
 
-  console.log(chalk.green('\nBuild successful!'));
+  if (stats.hasErrors()) {
+    console.error(chalk.red('\nBuild failed!'));
+  } else {
+    console.log(chalk.green('\nBuild successful!'));
+  }
 });

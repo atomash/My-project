@@ -45,7 +45,10 @@ module.exports = {
               babelrc: false,
               compact: false,
               presets: ['babel-preset-react-app', '@babel/preset-env'],
-              plugins: ['@babel/plugin-syntax-dynamic-import'],
+              plugins: [
+                '@babel/plugin-syntax-dynamic-import',
+                "transform-class-properties"
+              ],
               cacheDirectory: true,
               highlightCode: true,
             },

@@ -6,10 +6,7 @@ import { fetchUser } from "../../store/user/actions";
 import { fetchProduct } from "../../store/product/actions";
 import MyLoader from '../../lib/loader';
 
-export const fetchHome = () => [
-  fetchUser(),
-  fetchProduct()
-]
+import './styles/home.scss';
 
 class Home extends Component {
   componentDidMount() {
@@ -29,7 +26,7 @@ class Home extends Component {
           </title>
           <meta property="og:title" content="Home page"/>
         </Helmet>
-        <h1> Home page</h1>
+        <h1 className="h1Home">Home page</h1>
         <MyLoader load={this.props.userLoading}>
           <h1>{this.props.user.name}</h1>
         </MyLoader>

@@ -1,7 +1,7 @@
 import Loadable from 'react-loadable';
 import { NotFound } from './pages/NotFound'
-//import { fetchUser } from './store/user/actions'
-import { fetchHome } from './pages/Home';
+import { fetchUser } from './store/user/actions'
+import { fetchProduct } from './store/product/actions'
 
 const Home = Loadable({
     loader: () => import(/* webpackChunkName: 'home' */ 
@@ -35,15 +35,15 @@ export const router = {
                 path: '/',
                 exact: true,
                 component: Home,
-                PreloadData: fetchHome
+                PreloadData: () => [
+                    fetchUser(),
+                    fetchProduct()
+                  ]
             },
             {
                 path: '/about',
                 exact: true,
                 component: About,
-                // PreloadData: () => [
-                //     fetchUser()
-                // ]
             },
             {
                 path: '/red',
