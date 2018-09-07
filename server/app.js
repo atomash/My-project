@@ -9,6 +9,7 @@ import cookieParser from 'cookie-parser';
 import proxy from 'http-proxy-middleware';
 import api from './api';
 import mongoose, { connectMongo } from  './connectMongo';
+import cors from 'cors';
 
 
 connectMongo('mongodb://localhost:27017/testdbmongo')
@@ -17,7 +18,8 @@ const app = express();
 const MongoStore = require('connect-mongo')(session);
 
 app.disable('x-powered-by');
-const webpackDevServerHost = 'localhost:5050';
+app.use(cors());
+const webpackDevServerHost = 'localhost:3000';
 
 if (process.env.NODE_ENV === 'development') {
     const __ROOT_DIR__ = process.cwd();

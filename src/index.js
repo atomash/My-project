@@ -17,4 +17,13 @@ Loadable.preloadReady().then(() => {
     hydrate(<Root store={store} />, MOUNT)
 });
 
+if (process.env.NODE_ENV === 'development'){
+    if (module.hot) {
+        module.hot.accept('./containers/Root', () => {
+          const NextApp = require('./containers/Root').default
+          hydrate(<NextApp store={store} />, MOUNT)
+        })
+      }
+}
+
 

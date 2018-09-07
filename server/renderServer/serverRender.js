@@ -8,9 +8,7 @@ import renderHTMLTemplate from './template';
 import renderServerError from './template/error.template'
 import Helmet from 'react-helmet';
 import { PreloadDataInit, PreloadGlobalInit } from './preloadData';
-import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:4000';
 
 async function ServerRender(req, res){
       const store = configureStore(undefined, {logger: false});

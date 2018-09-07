@@ -1,8 +1,10 @@
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
-
+import axios from 'axios';
 import rootReducer from './rootReducer';
+
+axios.defaults.baseURL = 'http://localhost:4000';
 
 const configureStore = (initialState, options = { logger: true }) => {
   const middleware = [thunk];
