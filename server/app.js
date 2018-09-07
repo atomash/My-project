@@ -11,15 +11,14 @@ import api from './api';
 import mongoose, { connectMongo } from  './connectMongo';
 import cors from 'cors';
 
-
-connectMongo('mongodb://localhost:27017/testdbmongo')
-
 const app = express();
 const MongoStore = require('connect-mongo')(session);
+require('dotenv').config();
 
+connectMongo(process.env.DB_CONNECT);
 app.disable('x-powered-by');
 app.use(cors());
-const webpackDevServerHost = 'localhost:3000';
+const webpackDevServerHost = process.env.DEV_SERVER_HOST;
 
 if (process.env.NODE_ENV === 'development') {
     const __ROOT_DIR__ = process.cwd();
