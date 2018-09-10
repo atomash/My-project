@@ -12,6 +12,15 @@ const configureStore = (initialState, options = { logger: true }) => {
   if (process.env.NODE_ENV !== 'production' && options.logger) {
     const logger = createLogger({ collapsed: true });
     middleware.push(logger);
+
+    if (process.env.NODE_ENV === 'development') {
+      if (module.hot) {
+        module.hot.accept('./rootReducer', () => {
+          store.replaceReducer(rootReducer);
+        });
+      }
+    }
+
   }
 
   const store = createStore(
