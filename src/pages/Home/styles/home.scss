@@ -1,3 +1,9 @@
+@import "../../../styles/mixins.scss";
+
 .h1Home {
     color: rgb(120, 94, 196);
+}
+
+.ab {
+    @include a-button;
 }

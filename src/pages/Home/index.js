@@ -31,6 +31,8 @@ class Home extends Component {
           <h1>{this.props.user.name}</h1>
         </MyLoader>
         <h3>{this.props.product.title}</h3>
+
+        <a className='ab' href="#">test</a>
       </div>
     );
   }

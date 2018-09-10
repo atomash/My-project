@@ -4,6 +4,8 @@ import Loadable from 'react-loadable';
 import configureStore from './store/configureStore';
 import Root from './containers/Root';
 
+import './styles/GlobalStyles.scss';
+
 const MOUNT = document.getElementById('root');
 let initialState;
     
@@ -13,9 +15,13 @@ if (typeof window !== 'undefined' && window.INITIAL_STATE) {
 }
 const store = configureStore(initialState);
 
-Loadable.preloadReady().then(() => {
-    hydrate(<Root store={store} />, MOUNT)
-});
+const renderApp = Container => {
+    return Loadable.preloadReady().then(() => {
+        hydrate(<Container store={store} />, MOUNT)
+    });
+}
+
+renderApp(Root);
 
 if (process.env.NODE_ENV === 'development'){
     if (module.hot) {
